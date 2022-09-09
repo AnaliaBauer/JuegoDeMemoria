@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32819.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JuegoDeMemoria", "JuegoDeMemoria\JuegoDeMemoria.csproj", "{142FA713-7FFC-465A-ACBA-F967353F2F08}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JMBackend", "JMBackend\JMBackend.csproj", "{50D26A44-27C8-4E1D-9111-8082485CDFAA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{142FA713-7FFC-465A-ACBA-F967353F2F08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{142FA713-7FFC-465A-ACBA-F967353F2F08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{142FA713-7FFC-465A-ACBA-F967353F2F08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{142FA713-7FFC-465A-ACBA-F967353F2F08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50D26A44-27C8-4E1D-9111-8082485CDFAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50D26A44-27C8-4E1D-9111-8082485CDFAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50D26A44-27C8-4E1D-9111-8082485CDFAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50D26A44-27C8-4E1D-9111-8082485CDFAA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8C1571C4-1596-4DC6-A34F-482A68C8C170}
+	EndGlobalSection
+EndGlobal
