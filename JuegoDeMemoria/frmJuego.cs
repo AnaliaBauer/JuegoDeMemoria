@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace JuegoDeMemoria
 {
-    public partial class frmInicial : Form
+    public partial class frmJuego : Form
     {
         List<int> numeros = new List<int> { 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6 };
         string eleccion1;
@@ -22,7 +22,7 @@ namespace JuegoDeMemoria
         bool gameOver = false;
 
 
-        public frmInicial(string nombre)
+        public frmJuego(string nombre)
         {
             InitializeComponent();
             CargarImagenes();
@@ -202,7 +202,7 @@ namespace JuegoDeMemoria
         private void btnVolver_Click(object sender, EventArgs e)
         {
 
-            var juego = new frmPrincipal();
+            var juego = new frmBienvenida();
             juego.Show();
             this.Hide();
 

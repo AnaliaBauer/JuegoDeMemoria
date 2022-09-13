@@ -12,10 +12,10 @@ namespace JuegoDeMemoria
 {
 
 
-    public partial class frmPrincipal : Form
+    public partial class frmBienvenida : Form
     {
 
-        public frmPrincipal()
+        public frmBienvenida()
         {
             InitializeComponent();
 
@@ -24,7 +24,7 @@ namespace JuegoDeMemoria
         private void btnJugar_Click(object sender, EventArgs e)
         {
 
-            var juego = new frmInicial(txtJugador.Text);
+            var juego = new frmJuego(txtJugador.Text);
             juego.Show();
             this.Hide();
 

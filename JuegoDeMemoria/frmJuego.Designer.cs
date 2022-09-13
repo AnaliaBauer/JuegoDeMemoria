@@ -1,6 +1,6 @@
 ﻿namespace JuegoDeMemoria
 {
-    partial class frmInicial
+    partial class frmJuego
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInicial));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmJuego));
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblHola = new System.Windows.Forms.Label();
             this.btnVolver = new System.Windows.Forms.Button();

@@ -1,6 +1,6 @@
 ﻿namespace JuegoDeMemoria
 {
-    partial class frmPrincipal
+    partial class frmBienvenida
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBienvenida));
             this.lblBienvenido = new System.Windows.Forms.Label();
             this.txtJugador = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
@@ -102,8 +102,9 @@
             this.btnJugar.UseVisualStyleBackColor = false;
             this.btnJugar.Click += new System.EventHandler(this.btnJugar_Click);
             // 
-            // frmPrincipal
+            // frmBienvenida
             // 
+            this.AcceptButton = this.btnJugar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
@@ -115,7 +116,7 @@
             this.Controls.Add(this.txtJugador);
             this.Controls.Add(this.lblBienvenido);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frmPrincipal";
+            this.Name = "frmBienvenida";
             this.Text = "Jugadores";
             this.Load += new System.EventHandler(this.frmPrincipal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
