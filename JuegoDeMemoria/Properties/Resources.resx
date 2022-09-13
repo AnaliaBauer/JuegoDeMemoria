@@ -117,26 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="DorsoMemory" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DorsoMemory.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="TarjetaAvion" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\TarjetaAvion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="TarjetaCamara" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\TarjetaCamara.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="TarjetaPasajes" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\TarjetaPasajes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="TarjetaPasaporte" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\TarjetaPasaporte.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="TarjetaUbicacion" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\TarjetaUbicacion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="TarjetaValijas" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\TarjetaValijas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
 </root>
