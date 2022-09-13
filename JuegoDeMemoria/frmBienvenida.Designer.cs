@@ -41,10 +41,10 @@
             // lblBienvenido
             // 
             this.lblBienvenido.AutoSize = true;
-            this.lblBienvenido.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBienvenido.Font = new System.Drawing.Font("Century Schoolbook", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBienvenido.Location = new System.Drawing.Point(178, 60);
             this.lblBienvenido.Name = "lblBienvenido";
-            this.lblBienvenido.Size = new System.Drawing.Size(269, 23);
+            this.lblBienvenido.Size = new System.Drawing.Size(326, 25);
             this.lblBienvenido.TabIndex = 0;
             this.lblBienvenido.Text = "Bienvenido a Memory Game!";
             // 
@@ -60,12 +60,12 @@
             // 
             // lblNombre
             // 
-            this.lblNombre.Font = new System.Drawing.Font("Broadway", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.Location = new System.Drawing.Point(160, 94);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(133, 40);
             this.lblNombre.TabIndex = 2;
-            this.lblNombre.Text = "Ingresa tu nombre";
+            this.lblNombre.Text = "Ingresá tu nombre";
             this.lblNombre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
@@ -108,7 +108,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.ClientSize = new System.Drawing.Size(495, 309);
+            this.ClientSize = new System.Drawing.Size(509, 309);
             this.Controls.Add(this.btnJugar);
             this.Controls.Add(this.btnReglas);
             this.Controls.Add(this.pictureBox1);
@@ -117,7 +117,7 @@
             this.Controls.Add(this.lblBienvenido);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmBienvenida";
-            this.Text = "Jugadores";
+            this.Text = "Memory Game";
             this.Load += new System.EventHandler(this.frmPrincipal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

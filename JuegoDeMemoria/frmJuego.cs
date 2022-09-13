@@ -32,8 +32,6 @@ namespace JuegoDeMemoria
         }
 
 
-
-
         private void TimerEvent(object sender, EventArgs e)
         {
             cuentaRegresiva--;
@@ -132,7 +130,7 @@ namespace JuegoDeMemoria
 
         private Image SetearImagen(string tag)
         {
-           return Image.FromFile("imgs/" + tag+ ".png");
+            return Image.FromFile("imgs/" + tag + ".png");
         }
 
         private void ReiniciarJuego()
@@ -196,22 +194,27 @@ namespace JuegoDeMemoria
             gameOver = true;
             MessageBox.Show(msg + "Click en Reiniciar Juego para jugar otra vez.", "My Memory Game", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-
-            var juego = new frmBienvenida();
-            juego.Show();
-            this.Hide();
-
+            if (this.Owner != null)
+                this.Owner.Show();
+            this.Close();
 
         }
 
         private void frmInicial_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.Dispose();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+
+            if (this.Owner != null)
+                this.Owner.Dispose();
+            this.Close();
         }
     }
 

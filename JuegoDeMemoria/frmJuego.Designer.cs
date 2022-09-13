@@ -38,12 +38,14 @@
             this.lblTiempoRest = new System.Windows.Forms.Label();
             this.lblErrores = new System.Windows.Forms.Label();
             this.Temporizador = new System.Windows.Forms.Timer(this.components);
+            this.btnSalir = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.panel1.Controls.Add(this.btnSalir);
             this.panel1.Controls.Add(this.lblHola);
             this.panel1.Controls.Add(this.btnVolver);
             this.panel1.Controls.Add(this.lblNombre);
@@ -70,7 +72,7 @@
             // 
             this.btnVolver.BackColor = System.Drawing.Color.PowderBlue;
             this.btnVolver.Font = new System.Drawing.Font("Century Schoolbook", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolver.Location = new System.Drawing.Point(39, 509);
+            this.btnVolver.Location = new System.Drawing.Point(107, 509);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(173, 62);
             this.btnVolver.TabIndex = 2;
@@ -94,7 +96,7 @@
             // 
             this.btnReinicio.BackColor = System.Drawing.Color.PowderBlue;
             this.btnReinicio.Font = new System.Drawing.Font("Century Schoolbook", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReinicio.Location = new System.Drawing.Point(39, 577);
+            this.btnReinicio.Location = new System.Drawing.Point(3, 577);
             this.btnReinicio.Name = "btnReinicio";
             this.btnReinicio.Size = new System.Drawing.Size(180, 58);
             this.btnReinicio.TabIndex = 0;
@@ -129,7 +131,19 @@
             this.Temporizador.Interval = 1000;
             this.Temporizador.Tick += new System.EventHandler(this.TimerEvent);
             // 
-            // frmInicial
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.Color.PowderBlue;
+            this.btnSalir.Font = new System.Drawing.Font("Century Schoolbook", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.Location = new System.Drawing.Point(205, 577);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(180, 58);
+            this.btnSalir.TabIndex = 4;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // frmJuego
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -138,7 +152,7 @@
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frmInicial";
+            this.Name = "frmJuego";
             this.Text = "Memory Game";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmInicial_FormClosing);
             this.panel1.ResumeLayout(false);
@@ -157,5 +171,6 @@
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Label lblHola;
+        private System.Windows.Forms.Button btnSalir;
     }
 }

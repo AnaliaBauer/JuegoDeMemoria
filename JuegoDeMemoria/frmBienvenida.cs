@@ -25,11 +25,10 @@ namespace JuegoDeMemoria
         {
 
             var juego = new frmJuego(txtJugador.Text);
+            juego.Owner = this;
             juego.Show();
             this.Hide();
 
-
-                
         }
 
         private void btnReglas_Click(object sender, EventArgs e)
@@ -50,11 +49,11 @@ namespace JuegoDeMemoria
             }
             else
             {
-                btnJugar.Enabled=false;
+                btnJugar.Enabled = false;
             }
         }
     }
 }
-       
 
-        
+
+
