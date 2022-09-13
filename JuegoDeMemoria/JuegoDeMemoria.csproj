@@ -116,5 +116,11 @@
   <ItemGroup>
     <None Include="Resources\TarjetaValijas.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JMBackend\JMBackend.csproj">
+      <Project>{50D26A44-27C8-4E1D-9111-8082485CDFAA}</Project>
+      <Name>JMBackend</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

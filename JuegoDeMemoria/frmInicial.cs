@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -12,45 +13,49 @@ namespace JuegoDeMemoria
 {
     public partial class frmInicial : Form
     {
-        List<int> numeros = new List<int> { 1,1,2,2,3,3,4,4,5,5,6,6};
+        List<int> numeros = new List<int> { 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6 };
         string eleccion1;
         string eleccion2;
         int intentos;
         List<PictureBox> imagenes = new List<PictureBox>();
         PictureBox imagenA;
         PictureBox imagenB;
-        int tiempoDisponible = 60;
+        int tiempoDisponible = 120;
         int cuentaRegresiva;
         bool gameOver = false;
 
 
-        public frmInicial()
+        public frmInicial(string nombre)
         {
             InitializeComponent();
             CargarImagenes();
+            lblNombre.Text = nombre + "!";
+
+
         }
 
-      
 
-        private void TimerEvent(object sender, EventArgs e)
-        {
-            cuentaRegresiva--;
 
-            lblTiempoRest.Text = "Tiempo restante: " + cuentaRegresiva;
 
-            if (cuentaRegresiva < 1)
-            {
-                GameOver("Se termino el tiempo, lo siento!!");
+        //private void TimerEvent(object sender, EventArgs e)
+        //{
+        //    cuentaRegresiva--;
 
-                foreach (var imagen in imagenes)
-                {
-                    if (imagen.Tag != null)
-                    {
-                        imagen.Image = Image.FromFile("imgs/" + (string)imagen.Tag + ".png");
-                    }
-                }
-            }
-        }
+        //    lblTiempoRest.Text = "Tiempo restante: " + cuentaRegresiva;
+
+        //    if (cuentaRegresiva < 1)
+        //    {
+        //        GameOver("Se termino el tiempo, lo siento!!");
+
+        //        foreach (var imagen in imagenes)
+        //        {
+        //            if (imagen.Tag != null)
+        //            {
+        //                imagen.Image = Image.FromFile("imgs/" + (string)imagen.Tag + ".png");
+        //            }
+        //        }
+        //    }
+        //}
 
         private void btnReinicio_Click(object sender, EventArgs e)
         {
@@ -65,7 +70,7 @@ namespace JuegoDeMemoria
 
             for (int i = 0; i < 12; i++)
             {
-                 PictureBox newImg = new PictureBox();
+                PictureBox newImg = new PictureBox();
                 newImg.Height = 200;
                 newImg.Width = 150;
                 newImg.BackColor = Color.LightBlue;
@@ -89,7 +94,7 @@ namespace JuegoDeMemoria
                     rows = 0;
 
                 }
-                 
+
             }
 
             ReiniciarJuego();
@@ -104,48 +109,42 @@ namespace JuegoDeMemoria
             if (eleccion1 == null)
             {
                 imagenA = sender as PictureBox;
-                if (imagenA.Tag != null && imagenA.Image == null)
+                if (imagenA.Tag != null)
                 {
-                    imagenA.Image = Image.FromFile("imgs/"+(string)imagenA.Tag+".png");
+                    imagenA.Image = Image.FromFile("imgs/" + (string)imagenA.Tag + ".png");
                     eleccion1 = (string)imagenA.Tag;
                 }
+                imagenA.Refresh();
 
             }
             else if (eleccion2 == null)
             {
                 imagenB = sender as PictureBox;
-                if (imagenB.Tag != null && imagenB.Image == null)
+                if (imagenB.Tag != null)
                 {
                     imagenB.Image = Image.FromFile("imgs/" + (string)imagenB.Tag + ".png");
                     eleccion2 = (string)imagenB.Tag;
 
 
                 }
+                imagenB.Refresh();
 
-            }
-            else
-            {
                 CompararImagenes(imagenA, imagenB);
             }
-
-
-
-
-
         }
 
         private void ReiniciarJuego()
         {
-            var randomList = numeros.OrderBy(x => Guid.NewGuid()).ToList(); 
+            var randomList = numeros.OrderBy(x => Guid.NewGuid()).ToList();
 
             numeros = randomList;
 
             for (int i = 0; i < imagenes.Count; i++)
             {
-                imagenes[i].Image = null;
+                imagenes[i].Image = Image.FromFile("imgs/world.png");
                 imagenes[i].Tag = numeros[i].ToString();
 
-                
+
             }
 
             intentos = 0;
@@ -159,6 +158,7 @@ namespace JuegoDeMemoria
 
         private void CompararImagenes(PictureBox A, PictureBox B)
         {
+            Thread.Sleep(300);
             if (eleccion1 == eleccion2)
             {
                 A.Tag = null;
@@ -169,18 +169,19 @@ namespace JuegoDeMemoria
             {
                 intentos++;
                 lblErrores.Text = "Errores: " + intentos;
+                foreach (var imagen in imagenes.ToList())
+                {
+                    if (imagen.Tag != null)
+                    {
+                        imagen.Image = Image.FromFile("imgs/world.png");
+
+                    }
+                }
             }
 
             eleccion1 = null;
             eleccion2 = null;
-            foreach (var imagen in imagenes.ToList())
-            {
-                if (imagen.Tag != null)
-                {
-                    imagen.Image = null;
-                    
-                }
-            }
+
 
             if (imagenes.All(x => x.Tag == imagenes[0].Tag))
             {
@@ -192,13 +193,25 @@ namespace JuegoDeMemoria
         {
             Temporizador.Stop();
             gameOver = true;
-            MessageBox.Show(msg + "Click en Reiniciar Juego para jugar otra vez.");
+            MessageBox.Show(msg + "Click en Reiniciar Juego para jugar otra vez.", "My Memory Game", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
         }
 
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+
+            var juego = new frmPrincipal();
+            juego.Show();
+            this.Hide();
 
 
+        }
 
-
+        private void frmInicial_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Dispose();
+        }
     }
 
 }
