@@ -127,7 +127,7 @@
             // Temporizador
             // 
             this.Temporizador.Interval = 1000;
-           // this.Temporizador.Tick += new System.EventHandler(this.TimerEvent);
+            this.Temporizador.Tick += new System.EventHandler(this.TimerEvent);
             // 
             // frmInicial
             // 

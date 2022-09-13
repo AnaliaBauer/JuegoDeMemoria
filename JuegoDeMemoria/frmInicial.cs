@@ -1,12 +1,9 @@
-﻿using System;
+﻿using JMBackend;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace JuegoDeMemoria
@@ -20,7 +17,7 @@ namespace JuegoDeMemoria
         List<PictureBox> imagenes = new List<PictureBox>();
         PictureBox imagenA;
         PictureBox imagenB;
-        int tiempoDisponible = 120;
+        const int tiempoDisponible = 30;
         int cuentaRegresiva;
         bool gameOver = false;
 
@@ -37,25 +34,25 @@ namespace JuegoDeMemoria
 
 
 
-        //private void TimerEvent(object sender, EventArgs e)
-        //{
-        //    cuentaRegresiva--;
+        private void TimerEvent(object sender, EventArgs e)
+        {
+            cuentaRegresiva--;
 
-        //    lblTiempoRest.Text = "Tiempo restante: " + cuentaRegresiva;
+            lblTiempoRest.Text = "Tiempo restante: " + cuentaRegresiva;
 
-        //    if (cuentaRegresiva < 1)
-        //    {
-        //        GameOver("Se termino el tiempo, lo siento!!");
+            if (cuentaRegresiva < 1)
+            {
+                GameOver("Se termino el tiempo, lo siento!!");
 
-        //        foreach (var imagen in imagenes)
-        //        {
-        //            if (imagen.Tag != null)
-        //            {
-        //                imagen.Image = Image.FromFile("imgs/" + (string)imagen.Tag + ".png");
-        //            }
-        //        }
-        //    }
-        //}
+                foreach (var imagen in imagenes)
+                {
+                    if (imagen.Tag != null)
+                    {
+                        imagen.Image = Image.FromFile("imgs/" + (string)imagen.Tag + ".png");
+                    }
+                }
+            }
+        }
 
         private void btnReinicio_Click(object sender, EventArgs e)
         {
@@ -111,7 +108,7 @@ namespace JuegoDeMemoria
                 imagenA = sender as PictureBox;
                 if (imagenA.Tag != null)
                 {
-                    imagenA.Image = Image.FromFile("imgs/" + (string)imagenA.Tag + ".png");
+                    imagenA.Image = SetearImagen(imagenA.Tag.ToString());
                     eleccion1 = (string)imagenA.Tag;
                 }
                 imagenA.Refresh();
@@ -122,7 +119,7 @@ namespace JuegoDeMemoria
                 imagenB = sender as PictureBox;
                 if (imagenB.Tag != null)
                 {
-                    imagenB.Image = Image.FromFile("imgs/" + (string)imagenB.Tag + ".png");
+                    imagenB.Image = SetearImagen(imagenB.Tag.ToString());
                     eleccion2 = (string)imagenB.Tag;
 
 
@@ -133,11 +130,15 @@ namespace JuegoDeMemoria
             }
         }
 
+        private Image SetearImagen(string tag)
+        {
+           return Image.FromFile("imgs/" + tag+ ".png");
+        }
+
         private void ReiniciarJuego()
         {
-            var randomList = numeros.OrderBy(x => Guid.NewGuid()).ToList();
-
-            numeros = randomList;
+            Acciones acciones = new Acciones();
+            numeros = acciones.RandomizarLista(numeros);
 
             for (int i = 0; i < imagenes.Count; i++)
             {
