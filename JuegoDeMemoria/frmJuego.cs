@@ -46,7 +46,7 @@ namespace JuegoDeMemoria
                 {
                     if (imagen.Tag != null)
                     {
-                        imagen.Image = Image.FromFile("imgs/" + (string)imagen.Tag + ".png");
+                        imagen.Image = SetearImagen(imagen.Tag.ToString());
                     }
                 }
             }
@@ -130,7 +130,8 @@ namespace JuegoDeMemoria
 
         private Image SetearImagen(string tag)
         {
-            return Image.FromFile("imgs/" + tag + ".png");
+            return (Image)Properties.Resources.ResourceManager.GetObject("_" + tag);
+               
         }
 
         private void ReiniciarJuego()
@@ -140,7 +141,7 @@ namespace JuegoDeMemoria
 
             for (int i = 0; i < imagenes.Count; i++)
             {
-                imagenes[i].Image = Image.FromFile("imgs/world.png");
+                imagenes[i].Image = SetearImagen("world");
                 imagenes[i].Tag = numeros[i].ToString();
 
 
@@ -172,7 +173,7 @@ namespace JuegoDeMemoria
                 {
                     if (imagen.Tag != null)
                     {
-                        imagen.Image = Image.FromFile("imgs/world.png");
+                        imagen.Image = SetearImagen("world");
 
                     }
                 }

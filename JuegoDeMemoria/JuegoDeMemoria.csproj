@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationRevision>4</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -138,6 +138,13 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="imgs\1.png" />
+    <None Include="imgs\2.png" />
+    <None Include="imgs\3.png" />
+    <None Include="imgs\4.png" />
+    <None Include="imgs\5.png" />
+    <None Include="imgs\6.png" />
+    <None Include="imgs\world.png" />
     <Content Include="world.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
